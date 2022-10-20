@@ -6,6 +6,6 @@ import android.widget.Toast
 interface CounterView {
 
 fun showNewCount(count : Int)
-fun showToastIfTen(activity: Activity)
+fun showToastIfTen()
 fun changeTextColor()
 }

@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), CounterView {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter.attachView(this)
-        presenter.attachActivity(this)
         initClickers()
         }
 
@@ -35,8 +34,8 @@ class MainActivity : AppCompatActivity(), CounterView {
         binding.resultTv.text = count.toString()
     }
 
-     override fun showToastIfTen(msg : Activity) {
-         msg.createToast("Поздравляю")
+     override fun showToastIfTen() {
+         Toast.makeText(applicationContext, "Поздравляю", Toast.LENGTH_SHORT).show()
         }
 
     override fun changeTextColor() {

@@ -10,14 +10,14 @@ class Presenter {
 
     private val model = Injector.getModel()
     lateinit var view: CounterView
-    lateinit var activity: Activity
+
 
 
     fun increment() {
         model.increment()
         view.showNewCount(model.count)
         if (model.isTen()){
-            view.showToastIfTen(activity)
+            view.showToastIfTen()
         }
         if(model.isFifTeen()){
             view.changeTextColor()
@@ -25,9 +25,6 @@ class Presenter {
     }
 
 
-    fun attachActivity(activity: Activity){
-        this.activity = activity
-    }
     fun attachView(view: CounterView){
         this.view = view
     }
